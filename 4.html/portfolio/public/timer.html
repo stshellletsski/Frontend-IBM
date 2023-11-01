@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer-page</title>
+    <link rel="icon" type="image/x-icon" href="./clock.png">
+    <style> 
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #1c1b18;
+            font-size: 16px;
+            height: 100dvh;
+            width: 100dvw;
+	        min-width: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+	    form {
+		    flex-direction: column;
+		    display: flex;				
+	    }
+	    div {
+		    display: flex;
+		    flex-direction: row;
+	    }
+        button {
+	        margin-top: 10px;
+	        width: 50%;
+        }   
+    </style>
+</head>
+<body>
+    <form>
+        <input type="number" name="title" id="title-new">
+        <div>
+            <button type="button" id="setTimer">Set Timer</button>
+            <button type="button" id="cancelTimer">Cancel Timer</button>
+        </div> 
+    </form>
+    <script>
+        let title = document.querySelector("title");
+        let buttonStart = document.getElementById("setTimer");
+        let buttonEnd = document.getElementById("cancelTimer");
+        let timeLeft;
+        let timerId;
+        buttonStart.addEventListener("click", settingTimer);
+        buttonEnd.addEventListener("click", resetTimer);
+
+        function settingTimer() {
+            clearInterval(timerId);
+            timerId = null;
+            timeLeft = document.querySelector("input").value * 60;
+            timerId = setInterval(titleTimer, 1000);
+        }
+
+        function titleTimer() {
+            let minutes = Math.floor(timeLeft/60);
+            let seconds = timeLeft - minutes * 60;  
+            if (minutes === 0 && seconds === 0) {
+            alert("Time is up!");
+            clearInterval(timerId);
+            timerId = null;        
+            } else {
+                title.innerHTML = `-- ${minutes} : ${seconds} --`;
+                timeLeft--;    
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerId);
+            timerId = null;
+            title.innerHTML = "Set Timer";
+        }
+    </script>  
+</body>
+</html>

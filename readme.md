@@ -1,2 +1,2 @@
 ## IBM-Frontend course
-Space for IBM Frontend web dev projects
+Space for IBM Frontend web dev projects @ Skillsbuild

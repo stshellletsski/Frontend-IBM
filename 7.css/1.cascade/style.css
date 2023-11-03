@@ -12,18 +12,15 @@ p {
 }
 
 #outer-box {
-  border: 10px solid purple;
-  padding: 0;
+  background-color: purple;
 }
 
 .white-text {
   color: white;
-  background-color: red;
-  padding: 10px;
 }
 
 .inner-box {
-  padding: 0;
+  background-color: red;
 }
 
 

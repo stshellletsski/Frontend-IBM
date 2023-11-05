@@ -1,0 +1,44 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 50px 50px 0 50px;
+  background-color: #faf9f6;
+  display: flex;
+  flex-direction: column;
+  min-height: 95vh;
+}
+.main {
+  flex: 1;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+footer {
+  text-align: right;
+  color: midnightblue;
+}
+
+
+#creative {
+  color: #191970;
+}
+
+@media (min-width: 681px){
+  .card {width: 45%;} /* Why width 45% to prevent image clipping? */
+  .left {float: left;}
+  .right {float: right;}
+  .tile-image {height: 200px; float: left; margin-right: 3rem;}
+  #creative::after { content: "\a"; white-space: pre;}
+}
+
+
+@media (max-width: 680px) {
+  .logo {width: 50%; min-width: 100px; max-width: 150px;}
+  h1 {font-size: 3.5rem; text-align: center;}
+  #design {color: #ffb962;}
+  #agency {color: #9a0000;}
+  .tile-image { width: 100%; height: 200px; object-fit: cover; }
+  span {display: inline-block;}
+  .card { width: 100%;}
+}

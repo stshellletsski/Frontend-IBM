@@ -1,0 +1,5 @@
+- element.innerHTML - selects and modify inside html (including nested html tags)
+- element.textContent - selects and modify just text content.
+- element.attributes - gets list of all attributes of element
+- element.getAttribute("/attribute/") - gets a value of specific attribute of element
+- element.setAttribute("/attribute/", "/value") - sets value of specific attribute of element

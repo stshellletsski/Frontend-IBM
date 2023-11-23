@@ -6,12 +6,12 @@ on button click:
 */
 
 /* DONE 
-1) Add dice img function to elements
-2) Add random number function from 1-6
-3) Add array of images sources to numbers
-4) Add function to change h1 to : Player 1 Wins!, Player 2 Wins!, Draw!
-4a) create array with values
-4b) create function to change text
+1) Add array of images sources to numbers
+2) Add array with header values
+3) Create game function
+4) Add random number function from 1-6
+5) Add dice img function to elements
+6) Add function to change h1 to : Player 1 Wins!, Player 2 Wins!, Draw!
 */
 const d6Src = ["./images/dice1.png", "./images/dice2.png", "./images/dice3.png", "./images/dice4.png", "./images/dice5.png", "./images/dice6.png"]
 const whoWon = ["Player 1 Wins!", "Player 2 Wins!", "Draw!"];
@@ -23,7 +23,6 @@ function dicee () {
     let player2Roll = d6();
     document.querySelector(".img1").setAttribute("src", changeD6(player1Roll));
     document.querySelector(".img2").setAttribute("src", changeD6(player2Roll));
-    
     if (player1Roll > player2Roll ) {
         headerChange(1);
     } else if (player2Roll > player1Roll) {

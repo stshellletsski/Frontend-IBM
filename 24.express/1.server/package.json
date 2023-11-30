@@ -1,0 +1,15 @@
+{
+  "name": "express_server",
+  "version": "1.0.0",
+  "description": "node.js and express server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcin Strzelecki",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

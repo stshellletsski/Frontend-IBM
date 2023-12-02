@@ -15,7 +15,7 @@ function day2Data (day) {
 }
 
 app.get("/", (req, res) => {
-    let date = new Date("Dec 01 2023 19:39:33 GMT+0000");
+    let date = new Date();
     let index = day2Data(date.getDay());
     let k4random = Math.floor(Math.random()*4);
     console.log(k4random);

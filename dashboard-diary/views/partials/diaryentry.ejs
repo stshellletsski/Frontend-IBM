@@ -1,0 +1,20 @@
+
+<% if(locals.diaryEntries && !(diaryEntries.some(x=>x.edit === true))) {%>
+    <% diaryEntries.forEach ((entry) => { %>
+    <div class="container allEntriesWrapper">
+        <div class="container diaryEntry">
+            <div class="entryTitleWrapper">
+                <h4 class="entryDate"><%= entry.date %></h4>
+                <h4 class="entryTitle"><%= entry.title %></h4>
+            </div>
+            <div class="container content collapse">
+                <p class="entryContent"><%= entry.content %></p>
+                <form action="/diary" method="POST" class="diaryAction" >
+                    <button class="diaryButton" type="submit" name="edit" value="<%= entry.time %>">Edit</button>
+                    <button class="diaryButton" type="submit" name="delete" value="<%= entry.time %>">Delete</button>
+                </form>
+            </div>  
+        </div>
+    </div>
+    <% }); %>
+    <% } %>

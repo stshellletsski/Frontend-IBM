@@ -1,0 +1,20 @@
+<div class="todo">
+    <form action="/addTodo" method="POST" id="addForm">
+        <input type="text" name="newTask" maxlength="30" minlength="4" id="newTask" placeholder="Add new task" />
+        <input type="submit" value="ADD" id="addButton" />
+    </form>
+    <% if(locals.tasks) { %>
+        <ul class="tasks">
+            <% tasks.forEach( (task)=> { %>
+            <li>
+                <%= task %>
+                <div class="taskAction">
+                    <form action="/doneTodo" method="POST" id="trashForm">
+                        <button type="submit" name="task<%= tasks.indexOf(task) %>" value="yes" form="trashForm"><img src="img/trashcan.png" alt="delete"></button>
+                    </form>
+                </div>
+            </li>
+            <% }) %>    
+        </ul>
+    <% } %>
+</div>

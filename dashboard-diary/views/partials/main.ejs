@@ -1,0 +1,41 @@
+<main>
+    <div class="container allEntriesWrapper">
+        <div class="container diaryEntry" id="newEntry">
+            <div class="entryTitleWrapper">
+                <% if(diaryEntries.some(x=>x.edit === true)) { %>
+                    <h4 class="entryDate"><%= diaryEntries.find(x => x.edit === true).date %></h4>
+                <% } else { %>
+                    <h4 class="entryDate"><%= date %></h4>
+                <% } %>
+                <% if(diaryEntries.some(x=>x.edit === true)) { %>
+                    <h4 class="entryTitle">Edit Entry</h4>
+                <% } else { %>
+                    <h4 class="entryTitle">Add New Entry</h4>
+                <% } %>
+            </div>
+
+            <% if(diaryEntries.some(x=>x.edit === true)) { %>
+            <div class="container content">
+            <% } else { %>
+            <div class="container content collapse">
+            <% } %>
+                <% if(diaryEntries.some(x=>x.edit === true)) { %>
+                <input value="<%= diaryEntries.find(x => x.edit === true).title %> %>" class="entryTitleField" type="text" name="title" form="newEntryForm" placeholder="Add New Title">
+                <textarea class="entryContentField" name="content" cols="30" rows="10" form="newEntryForm" placeholder="Add New Content"><%= diaryEntries.find(x => x.edit === true).content %></textarea>
+                <form action="/diary" method="POST" class="diaryAction" id="newEntryForm">
+                    <button class="diaryButton" type="submit" name="submit" value="<%= diaryEntries.find(x => x.edit === true).time %>">Submit</button>
+                
+                <% } else { %>    
+                       
+                <input class="entryTitleField" type="text" name="title" form="newEntryForm" placeholder="Add New Title">
+                <textarea class="entryContentField" name="content" cols="30" rows="10" form="newEntryForm" placeholder="Add New Content"></textarea>
+                <form action="/diary" method="POST" class="diaryAction" id="newEntryForm">
+                    <button class="diaryButton" type="submit" name="submit" value="new">Submit</button>    
+                    
+                <% } %>    
+                </form>
+            </div>  
+        </div>
+    </div>
+    <%- include("diaryentry.ejs") %>
+</main>

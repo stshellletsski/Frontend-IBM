@@ -1,4 +1,3 @@
-[./img/text2fact1.png]
 # Text2Fact
 
 ## What is it?! 

@@ -1,18 +1,16 @@
 {
-  "name": "6.0-nosql",
+  "name": "diy_api",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Marcin Strzelecki",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
-  "devDependencies": {},
-  "description": ""
+  "description": "Jokes API"
 }

@@ -103,7 +103,7 @@ app.post("/user", async (req, res) => {
 });
 
 ////////////////////
-// Add new country
+// Add new user
 //////////////////
 app.post("/new", async (req, res) => {
   const newUser = req.body;

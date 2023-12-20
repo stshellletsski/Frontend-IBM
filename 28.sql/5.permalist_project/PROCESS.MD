@@ -7,7 +7,7 @@
 ## Preparation:
 [x] This document 00:13
 [x] Functional Diagram 00:47
-![diagram](./public/img/todo_diagram.png)
+![diagram](public/img/todo_diagram.png)
 
 [x] Database 00:53
 
